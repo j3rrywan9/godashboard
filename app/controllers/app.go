@@ -9,9 +9,9 @@ import (
 
 const connectionString = "user=postgres dbname=postgres password=postgres host=172.16.100.9 port=5432 sslmode=disable"
 
-var db gorm.DB
+var db *gorm.DB
 
-func initDB() gorm.DB {
+func initDB() *gorm.DB {
 	dbConn, err := gorm.Open("postgres", connectionString)
 
 	if err != nil {

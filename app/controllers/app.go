@@ -35,6 +35,6 @@ func (c App) Index() revel.Result {
 
 func (c App) Database() revel.Result {
 	var myDatabase []models.Mad_database
-	myDatabase = models.Get_all_databases(db)
+	myDatabase = models.Get_all_databases(*db)
 	return c.Render(myDatabase)
 }

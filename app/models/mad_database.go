@@ -11,7 +11,7 @@ type Mad_database struct {
 	Version string `sql:"size:50"`
 }
 
-func Get_all_databases(db *gorm.DB) []Mad_database {
+func Get_all_databases(db gorm.DB) []Mad_database {
 	var records []Mad_database
 	db.Table("mad_database").Select("*").Order("id").Scan(&records)
 	return records
